@@ -20,10 +20,14 @@ public class EventHandler {
     }
 
     public void checkEvent() {
-        if (hit(27, 7, "right") == true) {
+        if (hit(28, 38, "right") == true) {
             // event happens you fall into a pit  
             // there can be multiple events so to make the code clean make a new function named damagePit
             damagePit(gp.dialogueState);
+        }
+        if (hit(3, 1, "up") == true) { //make changes in the row and column acc to your map
+            healingPool(gp.dialogueState);
+
         }
     }
 
@@ -46,6 +50,14 @@ public class EventHandler {
         eventRect.y = eventRectDefaultY;
 
         return hit;
+    }
+    public void healingPool(int gameState){
+        if(gp.keyH.enterPressed == true){
+            gp.gameState = gameState;
+            gp.uI.currentDialogue = "You drink the water. \nYour life is restored!";
+            gp.player.life = gp.player.maxLife;
+        }
+     
     }
 
     public void damagePit(int gameState) {

@@ -119,6 +119,8 @@ public final class Player extends Entity {
 
         //check event
         gp.eHandler.checkEvent();
+
+        gp.keyH.enterPressed = false;
         
         if (moving == true) {
             // if collision is false, player can move
@@ -167,7 +169,7 @@ public final class Player extends Entity {
                 gp.npc[i].speak();
             }
         }
-        gp.keyH.enterPressed = false;
+       
     }
 
     @Override
