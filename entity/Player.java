@@ -180,7 +180,7 @@ public final class Player extends Entity {
         // g2.drawString("Playtime: " + dFormat.format(playTime), 50, 50);
 
         BufferedImage image = null;
-
+                                                              
         switch (direction) {
             case "up" ->
                 image = (spriteNum == 1) ? up1
